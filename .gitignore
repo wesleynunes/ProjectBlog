@@ -1,4 +1,4 @@
 #ignorar aquivo database
 
 .vs/ProjectBlog/v15/Server/sqlite3/db.lock
-
+.vs
