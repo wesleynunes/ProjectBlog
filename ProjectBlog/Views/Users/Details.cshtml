@@ -1,0 +1,81 @@
+﻿@model ProjectBlog.Models.User
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Detalhes do Usuário</h2>
+<div>  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Create_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Create_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Update_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Update_Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_Login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiveUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiveUser)
+        </dd>
+
+        <dt>
+            @Html.LabelForModel("Tipo de Usuário")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Types)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.UserId }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Voltar", "Index", new { }, new { @class = "btn btn-secondary" })
+</p>

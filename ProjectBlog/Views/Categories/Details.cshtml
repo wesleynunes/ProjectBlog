@@ -1,0 +1,42 @@
+﻿@model ProjectBlog.Models.Category
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Detalhes Categorias</h2>
+
+<div>  
+    <hr />
+    <dl class="dl-horizontal">    
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Create_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Create_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Update_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Update_Time)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.CategoryId }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Voltar", "Index", new { }, new { @class = "btn btn-secondary" })
+</p>

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr/>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet">
+<link href="~/Content/error.css" rel="stylesheet">
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!
+                </h1>
+                <br/>
+                <h2>
+                    404 Pagina não encontrada
+                </h2>
+                <div class="error-details">
+                    Desculpe, ocorreu um erro, a página solicitada não foi encontrada!
+                </div>
+                <br/>
+                <div class="error-actions">
+                    <a href="~/Posts/index" class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-home"></span>
+                        Inicio
+                    </a>
+                    |
+                    <a href="~/Posts/Contact" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-envelope"></span> 
+                        Entre em contato com o suporte
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

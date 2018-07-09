@@ -1,0 +1,49 @@
+﻿@model ProjectBlog.Models.Category
+
+@{
+    ViewBag.Title = "Deletar";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Deletar</h2>
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<hr/>
+<h3>Tem certeza de que deseja excluir este Usuário</h3>
+<h4>* @Html.DisplayFor(model => model.Name) *</h4>
+<div>  
+    <hr />
+    <dl class="dl-horizontal">  
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Create_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Create_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Update_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Update_Time)
+        </dd>     
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar", "Index", new { }, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>

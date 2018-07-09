@@ -1,0 +1,99 @@
+﻿@model PagedList.IPagedList<ProjectBlog.Models.Post>
+    @using PagedList.Mvc;
+
+    @{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+    }
+
+    <br />
+    <div class="row" id="row-busca">
+        <div class="col-md-8">
+            @using (Html.BeginForm("List", "Posts", FormMethod.Get, new { @class = "form-inline" }))
+            {
+            <div class="input-group pull-right">
+                <input type="text" class="form-control" placeholder="Buscar..." name="busca" value="@ViewBag.Busca">
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="submit">Buscar</button>
+                </span>
+            </div>
+            }
+        </div>
+    </div>
+    <br />
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.LabelForModel("Id")
+            </th>
+            <th>
+                @Html.LabelForModel("Nome")
+            </th>
+            <th>
+                @Html.LabelForModel("Titulo")
+            </th>
+            <th>
+                @Html.LabelForModel("Data Criação")
+            </th>
+            <th>
+                @Html.LabelForModel("Data Modificado")
+            </th>
+            <th>
+                @Html.LabelForModel("Atualização de Usuario")
+            </th>
+            <th>
+                @Html.LabelForModel("Tags")
+            </th>
+            <th>
+                @Html.LabelForModel("Imagens")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categories.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Create_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Update_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Update_User)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PostId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PostId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.PostId })
+            </td>
+        </tr>
+        }
+
+    </table>
+
+
+
+
+
+
+
+                          

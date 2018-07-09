@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <BR>
+    <TABLE BORDER=1>       
+        <TR>
+            Baixar no Nuget
+
+            <TD>EntityFramework </TD>
+
+            <TD>Microsoft.Owin.Host.SystemWeb</TD>
+
+            <TD>Microsoft.Owin.Security.Cookies</TD>
+
+        </TR> 
+
+        <TR>
+            Migrations
+
+            <TD> 
+                #Execultar no pront nuget
+                Enable-Migrations -ContextTypeName ProjectBlogContext -EnableAutomaticMigrations –Force
+            </TD>            
+            <TD>
+                #Colar nas configuraçoes do migration
+                AutomaticMigrationDataLossAllowed = true;
+             </TD>
+            <TD>
+                #colar nas configurações do glogal
+                Database.SetInitializer(new MigrateDatabaseToLatestVersion<Models.ProjectBlogContext, Migrations.Configuration>());
+            </TD>
+        <TR> 
+    </TABLE>
+</body>
+</html>

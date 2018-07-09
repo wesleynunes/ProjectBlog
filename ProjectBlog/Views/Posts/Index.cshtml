@@ -1,0 +1,79 @@
+﻿@model PagedList.IPagedList<ProjectBlog.Models.Post>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
+@if (ViewBag.Mensagem != null)
+{
+    <div class="alert alert-warning">
+        @ViewBag.Mensagem
+    </div>
+}
+
+@if (TempData["ErrorAuthorization"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorAuthorization"]
+    </div>
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="my-4">
+                Lista de posts            
+            </h2>
+            <hr />
+            @foreach (var item in Model)
+            {
+                <br />
+                    <div class="card mb-3">
+
+                        @if (!string.IsNullOrEmpty(item.Image))
+                        {
+                            <img class="card-img-top" src="@Url.Content(item.Image)" alt="Image" style="width:750px;height:350px;max-width: 100%" />
+                        }
+
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </h2>                           
+                            @Html.ActionLink("Saiba Mais", "Details", new { id = item.PostId }, new { @class = "btn btn-primary" })
+                        </div>
+                        <div class="card-footer text-muted">
+                            Postato no dia @Html.DisplayFor(modelItem => item.Create_time)  Por @Html.DisplayFor(modelItem => item.Users.Name)                        
+                        </div>
+                    </div>
+            }
+        </div>
+
+         @Html.Partial("_PartialSideMenu")
+       
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        @Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina, busca = ViewBag.Busca }))
+    </div>
+    <div class="col-md-4">
+        <span class="pull-right">
+            Listando registros de @Model.FirstItemOnPage a @Model.LastItemOnPage de um total de @Model.TotalItemCount
+        </span>
+    </div>
+</div>
+
+
+

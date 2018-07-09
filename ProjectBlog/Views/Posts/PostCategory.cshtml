@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ProjectBlog.ViewModels.PostViewModel>
+
+
+@foreach (var item in Model)
+    {
+    <tr>
+        <td>    
+            @Html.ActionLink(item.Name, "PostByCategory", "Posts", new { id = item.CategoryId })
+
+            @*@Html.ActionLink(item.Name, "PostByCategory", "Posts", new { categoryid = item.CategoryId})*@
+
+
+            @*@Html.ActionLink("Saiba Mais", "Details", new { id = item.PostId }, new { @class = "btn btn-primary" })*@
+
+            @* @Html.DisplayFor(modelItem => item.CategoryName) *@
+
+        </td>
+
+    </tr>
+}
+  

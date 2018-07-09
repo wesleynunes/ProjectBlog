@@ -1,0 +1,82 @@
+﻿@model ProjectBlog.Models.Post
+
+@{
+    ViewBag.Title = "Deletar";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Deletar</h2>
+<hr />
+<h3>Tem certeza de que deseja excluir este Post</h3>
+<h4>* @Html.DisplayFor(model => model.Title) *</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categories.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categories.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Users.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users.Login)
+        </dd>
+
+             
+        <dt>
+            @Html.DisplayNameFor(model => model.Create_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Create_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Update_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Update_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar", "Index", new { }, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>

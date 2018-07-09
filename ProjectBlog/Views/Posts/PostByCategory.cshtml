@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProjectBlog.ViewModels.PostViewModel>
+
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Test</h2>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="my-4">
+                Lista de posts
+            </h2>
+            <hr />
+            @foreach (var item in Model)
+            {
+                <br />
+                <div class="card mb-3">
+
+                    @if (!string.IsNullOrEmpty(item.Image))
+                    {
+                        <img class="card-img-top" src="@Url.Content(item.Image)" alt="Image" style="width:750px;height:350px;max-width: 100%" />
+                    }
+
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            @Html.DisplayFor(modelItem => item.PostId)
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </h2>
+                        @Html.ActionLink("Saiba Mais", "Details", new { id = item.PostId }, new { @class = "btn btn-primary" })
+                    </div>
+                    <div class="card-footer text-muted">
+                        Postato no dia @Html.DisplayFor(modelItem => item.Create_time)  Por @Html.DisplayFor(modelItem => item.Users.Name)
+                    </div>
+                </div>
+            }
+        </div>
+
+        @*@Html.Partial("_PartialSideMenu")*@
+
+    </div>
+</div>
+
