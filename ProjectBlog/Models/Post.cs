@@ -4,14 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web;
 using System.Web.Mvc;
-using PagedList;
 
 namespace ProjectBlog.Models
 {
     public class Post
     {
-        internal IPagedList<Post> posts;
-
         [Key]
         public int PostId { get; set; }
 
@@ -25,6 +22,7 @@ namespace ProjectBlog.Models
         public string Content { get; set; }
 
         [DisplayName("Horario Criado")]
+        [ScaffoldColumn(false)] // O scaffolding ignora a coluna para criação de views
         [Required]
         public DateTime Create_time { get; set; }
 
