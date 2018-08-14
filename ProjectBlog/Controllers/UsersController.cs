@@ -298,6 +298,7 @@ namespace ProjectBlog.Controllers
             db.Users.Remove(user);
             try
             {
+                TempData["MessageDeletar"] = "Usuário Deletado";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -315,13 +316,7 @@ namespace ProjectBlog.Controllers
                 }
 
                 return View(user);
-            }
-
-            //User user = db.Users.Find(id);
-            //db.Users.Remove(user);
-            //db.SaveChanges();
-            //TempData["MessagePanel"] = "Usuário deletado com sucesso";
-            //return RedirectToAction("Index");
+            }            
         }
 
         protected override void Dispose(bool disposing)

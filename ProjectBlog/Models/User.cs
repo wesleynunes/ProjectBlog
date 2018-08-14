@@ -35,10 +35,12 @@ namespace ProjectBlog.Models
         public string Password { get; set; }
 
         [Required]
+        [ScaffoldColumn(false)] // não criar a coluna via scaffolding
         [DisplayName("Horario Criado")]
         public DateTime Create_time { get; set; }
 
         [Required]
+        [ScaffoldColumn(false)] // não criar a coluna via scaffolding
         [DisplayName("Horario Atualizado")]
         public DateTime Update_Time { get; set; }
 

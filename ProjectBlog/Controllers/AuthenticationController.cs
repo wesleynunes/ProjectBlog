@@ -24,6 +24,7 @@ namespace ProjectBlog.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel viewmodel)
         {
             if (!ModelState.IsValid)

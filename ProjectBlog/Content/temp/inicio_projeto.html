@@ -6,34 +6,46 @@
 </head>
 <body>
     <BR>
-    <TABLE BORDER=1>       
-        <TR>
+    <TABLE BORDER=1>
+        <tr>
             Baixar no Nuget
 
-            <TD>EntityFramework </TD>
+            <td>EntityFramework </td>
 
-            <TD>Microsoft.Owin.Host.SystemWeb</TD>
+            <td>Microsoft.Owin.Host.SystemWeb</td>
 
-            <TD>Microsoft.Owin.Security.Cookies</TD>
+            <td>Microsoft.Owin.Security.Cookies</td>
+        </tr>
 
-        </TR> 
+        <tr>
+            Criar arquivo OWIN startup
+            <td>Arquivo para criaçao emcontrase em adicionar depois classes no campo de pesquisa digite owin</td>
+        </tr>
 
-        <TR>
+        <tr>
+            pageList.Mvc
+        </tr>
+
+        <tr>
+            tinymce
+        </tr>
+
+        <tr>
             Migrations
 
-            <TD> 
+            <td>
                 #Execultar no pront nuget
                 Enable-Migrations -ContextTypeName ProjectBlogContext -EnableAutomaticMigrations –Force
-            </TD>            
-            <TD>
+            </td>
+            <td>
                 #Colar nas configuraçoes do migration
                 AutomaticMigrationDataLossAllowed = true;
-             </TD>
-            <TD>
+            </td>
+            <td>
                 #colar nas configurações do glogal
                 Database.SetInitializer(new MigrateDatabaseToLatestVersion<Models.ProjectBlogContext, Migrations.Configuration>());
-            </TD>
-        <TR> 
+            </td>
+        </tr>
     </TABLE>
 </body>
 </html>

@@ -119,7 +119,7 @@ namespace ProjectBlog.Controllers
                 try
                 {
                     db.SaveChanges();
-                    TempData["MessagePanel"] = "Categoria cadastrada com sucesso";
+                    TempData["MessagePanel"] = "Categoria alterada com sucesso";
                     return RedirectToAction("Index");
                 }
                 catch (System.Exception ex)
