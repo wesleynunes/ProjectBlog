@@ -11,7 +11,8 @@ namespace ProjectBlog
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/tinymce/tinymce.js",
-                        "~/Scripts/tinymce/main.js"));
+                        "~/Scripts/tinymce/main.js",
+                        "~/Scripts/TopPage.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -29,7 +30,8 @@ namespace ProjectBlog
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/PagedList.css",
-                      "~/Content/modern-business.css"));
+                      "~/Content/modern-business.css",
+                      "~/Content/TopPage.css"));
 
             //Renderização de estilo para o Layout painel
             bundles.Add(new StyleBundle("~/Content/panel").Include(
